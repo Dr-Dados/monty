@@ -1,5 +1,6 @@
 #include "monty.h"
 
+data datax;
 /**
  * exec - exec opcode
  * Return: none
@@ -9,6 +10,7 @@ void exec(void)
 	instruction_t ins[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL},
 	};
 	int j = 0;
@@ -47,10 +49,10 @@ char *remove_spaces(char *str)
 }
 
 /**
- * main -  count how many charachter in number
+ * main -  count how many character in number
  * @argc: number
  * @argv: number
- * Return: the number lentgh
+ * Return: the number length
  */
 int main(int argc, char **argv)
 {

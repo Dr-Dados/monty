@@ -67,3 +67,21 @@ void _pall(stack_t **top, unsigned int line_number)
 	}
 	fflush(stdout);
 }
+
+/**
+ * _pint -  prints the value at the top of the stack
+ * @top: head of double list
+ * @line_number: line number of opcode
+ * Return: none
+ */
+void _pint(stack_t **top, unsigned int line_number)
+{
+	if (!*top)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(datax.top);
+		exit(EXIT_FAILURE);
+	}
+	fprintf(stdout, "%d\n", (*top)->n);
+	fflush(stdout);
+}
